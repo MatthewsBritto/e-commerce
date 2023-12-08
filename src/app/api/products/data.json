@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Brinco Onix",
+      "slug": "brinco-onix",
+      "price": 69,
+      "image": "/brinco-onix.png",
+      "description": "Brinco com pedra onix que minha sogra explanou que nem onix é...",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Brinco Branco",
+      "slug": "brinco branco",
+      "price": 49,
+      "image": "/brinco-branco.png",
+      "description": "Brinco Insanamante branco pra você que só simpatiza com branco.",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Espiral Radical",
+      "slug": "espiral-radical",
+      "price": 79,
+      "image": "/espiral.png",
+      "description": "Espiral radical pra você ficar legal!",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Pedra da Lua",
+      "slug": "pedra-da-lua",
+      "price": 99,
+      "image": "/pedra-lua.png",
+      "description": "Talvez também não seja a pedra do titulo, me desculpe por isso.",
+      "featured": false
+    }
+  ]
+}
