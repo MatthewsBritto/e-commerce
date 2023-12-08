@@ -18,6 +18,35 @@ const config: Config = {
         background: '#EBE4D4',
         blueBorder: '#82D6C7',
         orangeDark: '#FF4E26',
+        backgroundYellow: '#f9b021',
+      },
+      animation: {
+        'slide-top': 'slide-top 4.5s linear  infinite both',
+        'slide-top-reverse': 'slide-top-reverse 4.5s linear  infinite both',
+      },
+      keyframes: {
+        'slide-top': {
+          '0%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(-50px) translateX(-25px)',
+          },
+          '100%': {
+            tranform: 'translateY(0) translateX(0)',
+          },
+        },
+        'slide-top-reverse': {
+          '0%': {
+            transform: 'translateY(0) ',
+          },
+          '50%': {
+            transform: 'translateY(50px) translateX(20px)',
+          },
+          '100%': {
+            tranform: 'translateY(0px) translateX(0px)',
+          },
+        },
       },
     },
   },
