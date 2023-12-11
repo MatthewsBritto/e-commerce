@@ -22,7 +22,7 @@ export default function CarouselContainer({
       infiniteLoop
       showIndicators={false}
       showStatus={false}
-      className="h-1/2 overflow-hidden mt-5"
+      className="overflow-hidden mt-5 z-40"
     >
       {array.map((product) => {
         return (

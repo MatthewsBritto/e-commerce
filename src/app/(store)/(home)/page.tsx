@@ -29,16 +29,16 @@ export default async function Home() {
 
   return (
     <>
-      <div className="hidden md:grid md:max-h-[700px] md:grid-cols-9 md:grid-rows-6 gap-2 md:gap-6 max-w-[1400px]">
+      <div className="hidden md:grid md:max-h-[700px] md:grid-cols-9 md:grid-rows-6 gap-2 md:gap-6 max-w-[1400px] z-40">
         <Link
           href={`/product/${highlightedProduct.slug}`}
           className="group w-full relative md:col-span-6 md:row-span-6 rounded-lg overflow-hidden flex justify-center items-end"
         >
           <Image
             src={highlightedProduct.image}
-            className="group-hover:scale-105 transition-all w-full bg-contain"
-            width={920}
-            height={920}
+            className="group-hover:scale-105 transition-all w-full h-full"
+            width={1000}
+            height={900}
             quality={100}
             alt=""
           />

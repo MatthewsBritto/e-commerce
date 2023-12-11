@@ -13,13 +13,13 @@ export function Header() {
   const [activeMenu, setActiveMenu] = useState(false)
 
   return (
-    <div className="flex items-center justify-between max-w-[1000px] m-auto w-full">
+    <div className="flex items-center justify-between max-w-[1000px] m-auto w-full overflow-hidden">
       <div className="flex items-center justify-center h-full md:hidden">
         <Menu size={40} onClick={() => setActiveMenu(true)} />
       </div>
       <div
         className={`${activeMenu ? 'flex' : 'hidden'}
-        } absolute bg-background w-full h-full flex items-center justify-center top-0 left-0 z-10 md:hidden`}
+        } fixed bg-background w-full h-screen items-center justify-center top-0 left-0 z-50 md:hidden`}
       >
         <div className="absolute top-5 left-5 ">
           <X size={40} onClick={() => setActiveMenu(false)} />
