@@ -47,8 +47,8 @@ export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
 
   return (
-    <div className="relative flex h-[600px] items-center mt-0 md:mt-4 justify-center rounded-md">
-      <div className="flex flex-col md:flex-row md:h-[400px] w-full max-w-[1280px] lg:h-[600px] justify-center">
+    <div className="relative h-[600px] items-center pt-8 md:mt-4 justify-center rounded-md">
+      <div className="flex flex-col md:flex-row md:h-[400px] w-full max-w-[1280px] lg:h-[600px] justify-center h-[600px]">
         <div className="overflow-hidden h-full sm:w-full">
           <Image
             className="w-full h-full md:rounded-l-md rounded-t-md"

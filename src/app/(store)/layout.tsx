@@ -2,19 +2,23 @@ import { ReactNode } from 'react'
 
 import { Header } from '@/components/header'
 import { CartProvider } from '@/contexts/cart-context'
-import Circle from '@/components/circle'
+
 import Footer from '@/components/footer'
-import Image from 'next/image'
-import Teste from '@/../public/teste.svg'
-import Pink from '@/../public/pink.svg'
+import CartCheckout from '@/components/cart'
+import { UserProvider } from '@/contexts/user-context'
+import ModalSignin from '@/components/modal-sign-in'
 
 export default function StoreLayout({ children }: { children: ReactNode }) {
   return (
     <CartProvider>
-      <div className="overflow-hidden md:mx-auto md:grid h-[800px] md:h-screen  w-full max-w-[1600px] md:grid-rows-app md:gap-16 px-8 py-8 ">
-        <Header />
-        {children}
-      </div>
+      <UserProvider>
+        <div className="overflow-hidden md:mx-auto md:grid h-[800px] md:h-screen  w-full max-w-[1600px] md:grid-rows-app md:gap-16 px-8 py-8 ">
+          <Header />
+          {children}
+          <CartCheckout />
+          <ModalSignin />
+        </div>
+      </UserProvider>
       <Footer />
     </CartProvider>
   )

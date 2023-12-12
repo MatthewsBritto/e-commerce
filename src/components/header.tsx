@@ -8,9 +8,13 @@ import Logo from '../../public/Logo.png'
 
 import { CartWidget } from './cart-widget'
 import { SearchForm } from './search-form'
+import { useCart } from '@/contexts/cart-context'
+import { useUser } from '@/contexts/user-context'
 
 export function Header() {
   const [activeMenu, setActiveMenu] = useState(false)
+  const { changeCartState } = useCart()
+  const { changeModalLoginState } = useUser()
 
   return (
     <div className="flex items-center justify-between max-w-[1000px] m-auto w-full overflow-hidden">
@@ -25,8 +29,10 @@ export function Header() {
           <X size={40} onClick={() => setActiveMenu(false)} />
         </div>
         <div className="text-2xl flex flex-col gap-8 font-bold">
-          <h2>Home</h2>
-          <h2>Compras</h2>
+          <Link href="/" onClick={() => setActiveMenu(false)}>
+            <h2>Home</h2>
+          </Link>
+          <h2 onClick={changeCartState}>Compras</h2>
           <h2>Perfil</h2>
           <h2>Catalogo</h2>
           <h2>Contato</h2>
@@ -53,9 +59,10 @@ export function Header() {
         <CartWidget />
 
         <div className="w-px h-4 bg-orangeDark"></div>
-
-        <Link href="/" className="flex items-center gap-2 hover:underline">
+        <button onClick={() => changeModalLoginState(true)}>
           <span className="text-sm">Conta</span>
+        </button>
+        <Link href="/" className="flex items-center gap-2 hover:underline">
           <Image
             src="https://github.com/diego3g.png"
             className="h-6 w-6 rounded-full"
