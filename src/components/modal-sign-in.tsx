@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { Beer, Lock, X } from 'lucide-react'
 import Image from 'next/image'
 import Paz from '@/../public/paz.svg'
@@ -12,6 +12,8 @@ type FormLogin = {
 }
 
 export default function ModalSignin() {
+  const [signup, setSingup] = useState(false)
+
   const { handleSignIn, user, modalLoginActive, changeModalLoginState } =
     useUser()
   const { handleSubmit, register } = useForm<FormLogin>()
@@ -41,10 +43,12 @@ export default function ModalSignin() {
         <div className="flex flex-col w-full h-full items-start justify-between md:items-center md:px-4">
           <div className="flex flex-col gap-2 px-2 md:mt-14 ">
             <h2 className="font-bold text-2xl text-orangeDark md:text-3xl">
-              Bem-vindo !
+              {signup ? 'Bem-vindo !' : 'Crie sua conta'}
             </h2>
             <p className="text-base md:text-lg font-semibold w-[85%] text-orangeDark/80">
-              Acesse sua conta já e aproveite as melhores ofertas.
+              {signup
+                ? 'Acesse sua conta já e aproveite as melhores ofertas.'
+                : 'Crie já sua conta e aproveite as melhores ofertas.'}
             </p>
           </div>
           <form
@@ -77,7 +81,7 @@ export default function ModalSignin() {
               Log in
             </button>
             <div className="w-full flex items-end justify-center gap-8 text-sm p-2">
-              <button>Não tenho conta</button>
+              <button onClick={() => setSingup(true)}>Não tenho conta</button>
               <button>Esqueci a senha</button>
             </div>
           </form>

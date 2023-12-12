@@ -9,11 +9,12 @@ export interface CartItem {
   title: string
   price: number
   quantity: number
+  image: string
 }
 
 interface CartContextType {
   items: CartItem[]
-  addToCart: (productId: number) => void
+  addToCart: (productId: number, type: string) => void
   setItensOnCart: (id: number) => void
   changeCartState: () => void
   activeCart: boolean
@@ -25,7 +26,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [activeCart, setActiveCart] = useState(false)
 
-  async function addToCart(productId: number) {
+  async function addToCart(productId: number, type = '+') {
     const product = await setItensOnCart(productId)
 
     if (!product) {
@@ -38,7 +39,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (productInCart) {
         return state.map((item) => {
           if (item.productId === productId) {
-            return { ...item, quantity: item.quantity + 1 }
+            return {
+              ...item,
+              quantity: type === '+' ? item.quantity + 1 : item.quantity - 1,
+            }
           } else {
             return item
           }
@@ -50,6 +54,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
             productId,
             title: product[0].title,
             price: product[0].price,
+            image: product[0].image,
             quantity: 1,
           },
         ]
