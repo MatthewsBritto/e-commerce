@@ -29,7 +29,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="hidden md:grid md:max-h-[700px] md:grid-cols-9 md:grid-rows-6 gap-2 md:gap-6 max-w-[1400px] z-40">
+      <div className="hidden md:grid  md:max-h-[700px] md:grid-cols-9 md:grid-rows-6 gap-2 md:gap-6 max-w-[1400px] z-40">
         <Link
           href={`/product/${highlightedProduct.slug}`}
           className="group w-full relative md:col-span-6 md:row-span-6 rounded-lg overflow-hidden flex justify-center items-end"
@@ -92,7 +92,7 @@ export default async function Home() {
         })}
       </div>
 
-      <div className="flex w-full items-center md:hidden">
+      <div className="flex w-full h-[80%] items-center md:hidden">
         <CarouselContainer
           highProduct={highlightedProduct}
           otherProducts={otherProducts}

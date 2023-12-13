@@ -12,14 +12,14 @@ export default function ItemCart({
 }: CartItem) {
   const { addToCart } = useCart()
   return (
-    <div className=" w-[98%] mx-auto p-1 rounded flex mt-2 items-end gap-2 bg-orangeDark">
+    <div className="w-[98%] mx-auto p-1 rounded flex mt-2 items-end gap-2 bg-orangeDark shadow-md">
       <div>
         <Image
           src={image}
           alt=""
           width={100}
           height={50}
-          className="rounded-lg"
+          className="rounded-md"
         />
       </div>
       <div className="flex flex-col h-full w-[75%] justify-between  ">

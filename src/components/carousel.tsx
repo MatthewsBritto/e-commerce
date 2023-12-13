@@ -18,15 +18,13 @@ export default function CarouselContainer({
   const array = [highProduct, ...otherProducts]
   return (
     <Carousel
-      autoPlay
-      infiniteLoop
       showIndicators={false}
       showStatus={false}
       className="overflow-hidden mt-5 z-40"
     >
       {array.map((product) => {
         return (
-          <div key={product.id} className="h-[600px] w-full">
+          <div key={product.id} className="h-full w-full">
             <Link href={`product/${product.slug}`}>
               <div className="bg-contain rounded-t-lg flex-1">
                 <Image

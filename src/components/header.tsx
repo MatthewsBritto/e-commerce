@@ -33,7 +33,9 @@ export function Header() {
             <h2>Home</h2>
           </Link>
           <h2 onClick={changeCartState}>Compras</h2>
-          <h2>Perfil</h2>
+          <Link href="/auth" onClick={() => setActiveMenu(false)}>
+            <h2>Perfil</h2>
+          </Link>
           <h2>Catalogo</h2>
           <h2>Contato</h2>
         </div>

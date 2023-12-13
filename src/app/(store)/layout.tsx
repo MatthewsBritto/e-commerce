@@ -12,7 +12,7 @@ export default function StoreLayout({ children }: { children: ReactNode }) {
   return (
     <CartProvider>
       <UserProvider>
-        <div className="overflow-hidden md:mx-auto md:grid h-[800px] md:h-screen  w-full max-w-[1600px] md:grid-rows-app md:gap-16 px-8 py-8 ">
+        <div className="overflow-hidden md:mx-auto md:grid h-[800px] md:h-screen  w-full max-w-[1600px] md:grid-rows-app md:gap-16 px-8 py-8 transition-all ">
           <Header />
           {children}
           <CartCheckout />
