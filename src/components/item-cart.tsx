@@ -12,7 +12,7 @@ export default function ItemCart({
 }: CartItem) {
   const { addToCart } = useCart()
   return (
-    <div className="w-[98%] mx-auto p-1 rounded flex mt-2 items-end gap-2 bg-orangeDark shadow-md">
+    <div className="w-[98%] mx-auto p-1 rounded flex mt-2 h-full gap-2 bg-orangeDark shadow-md">
       <div>
         <Image
           src={image}
@@ -22,7 +22,10 @@ export default function ItemCart({
           className="rounded-md"
         />
       </div>
-      <div className="flex flex-col h-full w-[75%] justify-between  ">
+      <div
+        className="flex flex-col flex-1 
+       w-[75%] justify-between  "
+      >
         <div className="flex w-full justify-between py-2 text-sm">
           <h2 className="">{title}</h2>
           <span className="pr-1">R$ {price * quantity}</span>

@@ -1,3 +1,5 @@
+import CheckAdress from './adress'
+import CheckItems from './check-items'
 import HeaderCheckout from './header-checkout'
 import Payament from './payament'
 
@@ -6,7 +8,9 @@ export default function ContainerCheckout() {
     <div>
       <HeaderCheckout />
       <div className="flex  rounded-md  overflow-hidden">
-        <Payament />
+        <CheckAdress />
+        {/* <CheckItems /> */}
+        {/* <Payament /> */}
       </div>
     </div>
   )
