@@ -18,7 +18,7 @@ const UserContext = createContext({} as UserContextProps)
 export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState({} as UserType)
 
-  const [modalLoginActive, setModalLoginActive] = useState(true)
+  const [modalLoginActive, setModalLoginActive] = useState(false)
 
   function handleSignIn(email: string) {
     const bodyUser = {
